@@ -7,8 +7,8 @@ A Laravel-based Human Resource Management System for managing employees, departm
 | Field    | Value             |
 |----------|-------------------|
 | Name     | Admin             |
-| Email    | admin@email.com   |
-| Password | password          |
+| Email    | admin@gmail.com   |
+| Password | admin12345        |
 | Role     | admin             |
 
 ## Features
