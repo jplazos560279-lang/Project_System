@@ -54,8 +54,11 @@ public function index(Request $request)
 
                     $position = \App\Models\Position::first() ?? \App\Models\Position::create([
                         'position_name' => 'Staff',
-                        'dept_id' => $department->dept_id
+                        'dept_id' => $department->dept_id,
+                        // Ensure salary has a value to satisfy NOT NULL/default constraints
+                        'salary' => 0,
                     ]);
+
 
                     $employee = Employee::create([
                         'user_id' => $user->id,
@@ -92,7 +95,7 @@ public function index(Request $request)
             'time_out' => 'nullable',
             'has_excuse' => 'nullable|boolean',
         ]);
-
+        
         $timeIn = \Carbon\Carbon::parse($validated['time_in']);
         $timeOut = $validated['time_out'] ? \Carbon\Carbon::parse($validated['time_out']) : null;
         
