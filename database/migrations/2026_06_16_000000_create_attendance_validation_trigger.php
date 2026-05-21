@@ -16,8 +16,8 @@ return new class extends Migration
         SQL);
 
         DB::unprepared(<<<SQL
-        CREATE TRIGGER attendance_after_insert_validate
-        AFTER INSERT ON attendances
+        CREATE TRIGGER attendance_before_insert_validate
+        BEFORE INSERT ON attendances
         FOR EACH ROW
         BEGIN
 
@@ -52,4 +52,3 @@ return new class extends Migration
         SQL);
     }
 };
-
