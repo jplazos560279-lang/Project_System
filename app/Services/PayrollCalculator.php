@@ -16,3 +16,4 @@ class PayrollCalculator
         return $baseSalary - $deductions;
     }
 }
+
